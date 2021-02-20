@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="shortcut icon" href="favicon.ico" type="image/x-icon">
+  <link rel="stylesheet" href="style.css">
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
+  <script src="https://unpkg.com/vue@next"></script>
+  <title>Todo-List</title>
+</head>
+<body>
+    <div id="app">
+      <div class="container">
+        <h1 style="text-align: right; color: aquamarine; opacity:0.7;">Todo-List</h1>
+        <br>
+        <br>
+        <input type="text" class="form-control" placeholder="Quel est votre tache" v-model ="tache"><br><button class="btn btn-primary fixed-right" @click="AjouterTache">Valider</button>
+        <br>
+        <br>
+        <div>
+          <h3>Tache à faire</h3>
+         <div  v-for = "todo in todos" style="height:100px;" class="bg-secondary" v-model="todo" >
+          <p>{{todo}}</p> <button class="btn btn-success  btn-lg btn-block"  style="float: right;" @click="SupprimerTache">Terminé</button>
+          <br>
+         </div>
+         
+         </div>
+        </div>
+        
+      </div>
+
+
+    </div>
+    <script src="app.js"></script>
+</body>
+</html>
